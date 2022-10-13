@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/13/2022 14:05:41" ReportInfo.Modified="10/13/2022 14:10:07" ReportInfo.CreatorVersion="2022.3.0.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="customersList" ReferenceName="customersList" DataType="null" Enabled="true">
+      <Column Name="PES_CODIGO" Alias="#ID" DataType="System.Int32"/>
+      <Column Name="PES_NOME" Alias="Nome" DataType="System.String"/>
+      <Column Name="PES_EMAIL" Alias="Email" DataType="System.String"/>
+      <Column Name="PES_SALARIO" Alias="Salário" DataType="System.Decimal"/>
+      <Column Name="PES_LIMITE" Alias="Limite de Segurança" DataType="System.Decimal"/>
+      <Column Name="PES_MINIMO" Alias="Mínimo" DataType="System.Decimal"/>
+      <Column Name="PES_SALDO" Alias="Saldo" DataType="System.Decimal"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="122.85">
+      <TextObject Name="Text13" Left="141.75" Top="9.45" Width="330.75" Height="18.9" Font="Arial, 10pt"/>
+      <TextObject Name="Text14" Left="699.3" Top="18.9" Width="94.5" Height="18.9" Font="Arial, 10pt"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="126.85" Width="718.2" Height="28.35">
+      <TextObject Name="Text2" Width="94.5" Height="18.9" Text="#ID" Font="Arial, 10pt"/>
+      <TextObject Name="Text4" Left="113.4" Width="94.5" Height="18.9" Text="Nome" Font="Arial, 10pt"/>
+      <TextObject Name="Text6" Left="226.8" Width="94.5" Height="18.9" Text="Email" Font="Arial, 10pt"/>
+      <TextObject Name="Text8" Left="340.2" Width="94.5" Height="18.9" Text="Salário" Font="Arial, 10pt"/>
+      <TextObject Name="Text10" Left="453.6" Width="94.5" Height="18.9" Text="Limite de Segurança" Font="Arial, 10pt"/>
+      <TextObject Name="Text12" Left="614.25" Width="94.5" Height="18.9" Text="Saldo" Font="Arial, 10pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="159.2" Width="718.2" Height="75.6" DataSource="customersList">
+      <TextObject Name="Text1" Top="9.45" Width="94.5" Height="18.9" Text="[customersList.#ID]" Font="Arial, 10pt"/>
+      <TextObject Name="Text3" Left="113.4" Top="9.45" Width="94.5" Height="18.9" Text="[customersList.Nome]" Font="Arial, 10pt"/>
+      <TextObject Name="Text5" Left="226.8" Top="9.45" Width="94.5" Height="18.9" Text="[customersList.Email]" Font="Arial, 10pt"/>
+      <TextObject Name="Text7" Left="340.2" Top="9.45" Width="94.5" Height="18.9" Text="[customersList.Salário]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text9" Left="453.6" Top="9.45" Width="94.5" Height="18.9" Text="[customersList.Limite de Segurança]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text11" Left="614.25" Top="9.45" Width="94.5" Height="18.9" Text="[customersList.Saldo]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="238.8" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

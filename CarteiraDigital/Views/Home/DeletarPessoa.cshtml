@@ -1,0 +1,108 @@
+﻿@model CarteiraDigital.Entidades.Tabela_Pessoas
+
+
+<div class="dl-horizontal">
+    <hr />
+    <dt>
+        <h3>
+            #ID
+        </h3>
+    </dt>
+    <dd>
+        <h4>
+            @Html.DisplayFor(model => model.PES_CODIGO)
+        </h4>
+    </dd>
+    <hr />
+    <dt>
+        <h3>
+            Nome
+        </h3>
+    </dt>
+    <dd>
+        <h4>
+            @Html.DisplayFor(model => model.PES_NOME)
+        </h4>
+    </dd>
+    <hr />
+    <dt>
+        <h3>
+            E-mail
+        </h3>
+    </dt>
+    <dd>
+        <h4>
+            @Html.DisplayFor(model => model.PES_EMAIL)
+        </h4>
+    </dd>
+    <hr />
+    <dt>
+        <h3>
+            Salário
+        </h3>
+    </dt>
+    <dd>
+        <h4>
+            @Html.DisplayFor(model => model.PES_SALARIO)
+        </h4>
+    </dd>
+    <hr />
+    <dt>
+        <h3>
+            Limite De Segurança
+        </h3>
+    </dt>
+    <dd>
+        <h4>
+            @Html.DisplayFor(model => model.PES_LIMITE)
+        </h4>
+    </dd>
+    <hr />
+    <dt>
+        <h3>
+            Mínimo
+        </h3>
+    </dt>
+    <dd>
+        <h4>
+            @Html.DisplayFor(model => model.PES_MINIMO)
+        </h4>
+    </dd>
+    <hr />
+    <dt>
+        <h3>
+            Saldo
+        </h3>
+    </dt>
+    <dd>
+        <h4>
+            @Html.DisplayFor(model => model.PES_SALDO)
+        </h4>
+    </dd>
+    <hr />
+</div>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <button type="submit" value="Delete" class="btn btn-danger"> <span class="excluir">Excluir</span></button>
+        <button class="btn btn-warning">
+            @Html.ActionLink("" +
+           "Voltar", "Index")
+        </button>
+    </div>
+}
+
+<style>
+    label {
+        margin-left: 15px;
+    }
+
+    body {
+        background-color: rgb(194, 207, 197);
+    }
+</style>

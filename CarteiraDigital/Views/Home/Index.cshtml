@@ -1,0 +1,92 @@
+﻿@model IEnumerable<CarteiraDigital.Entidades.Tabela_Pessoas>
+
+    @{
+    ViewData["Title"] = "PesquisaCliente";
+    }
+
+    <h1>Pesquisa Cliente</h1>
+
+
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-success " style="margin-left:4px">
+            <a asp-controller="CadastrarPessoa" asp-action="CadastrarPessoa">Cadastro</a>
+        </button>
+    </div>
+    <br />
+
+
+
+    <table id="table-index" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th scope="col">#ID
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Salário</th>
+                <th scope="col">Limite De Segurança</th>
+                <th scope="col">Mínimo</th>
+                <th scope="col">Saldo</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+            <tr>
+                <th scope="row"> @Html.DisplayFor(modelItem => item.PES_CODIGO)</th>
+                <td>  @Html.DisplayFor(modelItem => item.PES_NOME)</td>
+
+                <td> @Html.DisplayFor(modelItem => item.PES_NOME)</td>
+
+                <td> @Html.DisplayFor(modelItem => item.PES_SALARIO)</td>
+
+                <td>  @Html.DisplayFor(modelItem => item.PES_LIMITE)</td>
+
+                <td>  @Html.DisplayFor(modelItem => item.PES_MINIMO)</td>
+
+                <td>    @Html.DisplayFor(modelItem => item.PES_SALDO)</td>
+
+                <td>
+
+                    <button class="btn btn-primary">
+                        @Html.ActionLink("Editar", "EditarPessoa", new { pes_codigo = item.PES_CODIGO })
+                    </button>
+                    <button class="btn btn-danger">
+                        @Html.ActionLink("Excluir", "DeletarPessoa", new { pes_codigo = item.PES_CODIGO })
+                    </button>
+
+                </td>
+            </tr>
+ }
+        }
+        else
+        {
+            <tr class="odd"><td valign="top" colspan="5">Nenhum Home encontrado</td></tr>
+}
+        </tbody>
+    </table>
+    <button class="btn btn-success ">
+        <a asp-controller="Home" asp-action="ExportReport">
+            <i class="ti-menu ti-download"></i> Exportar
+        </a>
+    </button>
+
+
+
+    <style>
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+            a:hover {
+                color: white;
+                text-decoration: none;
+            }
+
+        body {
+            background-color: rgb(194, 207, 197);
+        }
+    </style>

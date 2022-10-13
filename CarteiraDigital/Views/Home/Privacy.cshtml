@@ -1,0 +1,69 @@
+﻿@model IEnumerable<CarteiraDigital.Entidades.Tabela_Pessoas>
+
+
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PES_CODIGO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PES_NOME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PES_EMAIL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PES_SALARIO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PES_LIMITE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PES_MINIMO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PES_SALDO)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PES_CODIGO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PES_NOME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PES_EMAIL)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PES_SALARIO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PES_LIMITE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PES_MINIMO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PES_SALDO)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,55 @@
+﻿@model CarteiraDigital.Entidades.Tabela_Pessoas
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+
+<div class="row">
+    <div class="col-md-12" style="margin: 0 auto;">
+        <form asp-action="CadastrarPessoa">
+            <div class="row">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group col-12 col-md-6">
+                    <label asp-for="PES_NOME" class="control-label">Nome</label>
+                    <input asp-for="PES_NOME" id="Nome" class="form-control" placeholder="Nome" />
+                </div>
+                <div class="form-group col-12 col-md-6">
+                    <label asp-for="PES_EMAIL" class="control-label">E-mail</label>
+                    <input asp-for="PES_EMAIL" class="form-control" placeholder="E-mail" required />
+                </div>
+                <div class="form-group col-12 col-md-4">
+                    <label asp-for="PES_SALARIO" class="control-label">Salário</label>
+                    <input asp-for="PES_SALARIO" class="form-control" placeholder="Salário" required />
+                </div>
+                <div class="form-group col-12 col-md-4">
+                    <label class="control-label">Limite</label>
+                    <input asp-for="PES_LIMITE" class="form-control" placeholder="Limite" required />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group col-12 col-md-4">
+                    <label asp-for="PES_MINIMO" class="control-label">Mínimo</label>
+                    <input asp-for="PES_MINIMO" class="form-control" placeholder="Mínimo em conta" required />
+                </div>
+
+                <div class="form-group d-flex justify-content-end">
+                    <input type="submit" value="Criar" class="btn btn-primary " id="teste" required />
+                    <button class="btn btn-danger " style="margin-left:4px">
+                        <a asp-controller="Home" asp-action="Index">Voltar</a>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+
+
+    body {
+        background-color: rgb(194, 207, 197);
+    }
+</style>
